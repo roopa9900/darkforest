@@ -1,5 +1,9 @@
 # Dark Forest - Java Game
 
+## Disclamore!
+
+This game was developed as a semester work at the university and is not a finished product. I had no previous experience in developing in java and especially games.
+
 ## Topic
 
 The topic of the semester work is a game engine for Real time RPG games in open world with 2D top view.
@@ -63,3 +67,170 @@ If the player dies, the game will start again.
 There are portals in the game that allow you to move between locations.
 
 ![image](https://user-images.githubusercontent.com/30042943/178841855-1531919b-43cd-49ee-a9ea-18f4449cd6d5.png)
+
+## Technical description
+
+I tried my best to separate the main parts of the game to make it easier to expand.
+
+The JavaFX library is used for graphics. The game world is rendered using canvas.
+
+Almost everything in the game can be set up with configuration files, without the need to change the game code. 
+
+### Configuration
+
+#### Player
+
+Example player configuration.
+
+```
+{
+  "name": "Mikita",
+  "initialHealth": 500,
+  "health": 500,
+  "damage": 50,
+  "armor": 0,
+  "damageRadius": 10,
+  "locationId": 1,
+  "positionX": 17,
+  "positionY": 9,
+  "equippedWeaponId": 4,
+  "equippedArmorId": -1,
+  "inventory": [1, 5]
+}
+```
+
+#### Map
+
+Example map configuration. Each character represents a separate tile.
+
+```
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBB
+AAAABBBBBBBBBBBBBAAAAAAAAAAAAAAAAAAABBBBBBB
+AAAABBBBBBBBBBBBBAAAAAAAAAAAAAABBBBBBBBBBBB
+AAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBAAABBBBBBB
+AAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBAAABBBBBBB
+AAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBB
+AAAAAAAAAAAAAABAAAABAAAAAAABBBBBBAAAAAAAAAA
+AAAAAAAAABAAAAAAABAAAABAAAAAAAAAAAAAAAAAAAA
+AAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAABBBBBAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAABBBBBAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAABBBBBAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+```
+
+#### Tile
+
+```
+{
+  "id": "A",
+  "passable": true
+}
+```
+
+#### Location
+
+```
+{
+  "id": 1,
+  "name": "Dark forest",
+  "portals": [
+    {
+      "id": 1,
+      "positionX": 27,
+      "positionY": 7
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "positionX": 36,
+      "positionY": 9
+    },
+    {
+      "id": 2,
+      "positionX": 35,
+      "positionY": 13
+    },
+    {
+      "id": 3,
+      "positionX": 11,
+      "positionY": 9
+    },
+    {
+      "id": 4,
+      "positionX": 10,
+      "positionY": 3
+    },
+    {
+      "id": 7,
+      "positionX": 13,
+      "positionY": 11
+    }
+  ],
+  "monsters": [
+    {
+      "id": 1,
+      "positionX": 36,
+      "positionY": 9
+    },
+    {
+      "id": 2,
+      "positionX": 35,
+      "positionY": 11
+    },
+    {
+      "id": 1,
+      "positionX": 10,
+      "positionY": 3
+    },
+    {
+      "id": 3,
+      "positionX": 7,
+      "positionY": 12
+    }
+  ]
+}
+```
+
+#### Portal
+
+```
+{
+  "id": 1,
+  "locationId": 2,
+  "playerX": 13,
+  "playerY": 5
+}
+```
+
+#### Item
+
+```
+{
+  "id": 6,
+  "name": "Sphere of death",
+  "type": "weapon",
+  "damage": 100,
+  "radius": 50
+}
+```
+
+#### Enemy
+
+```
+{
+  "id": 1,
+  "name": "Life Eater",
+  "health": 350,
+  "damage": 20,
+  "damageRadius": 20,
+  "viewingRadius": 64,
+  "speed": 70,
+  "attackSpeed": 1000
+}
+```
