@@ -56,17 +56,17 @@ The player can collect various items on the map, which he can then see in his in
 
 The player can also select items in the inventory using the **W**, **A**, **S**, **D** keys, put on or take off an item using the **J** key, use an item using the **K** key, and delete an item using the **L** key. The currently selected item and items that are already equipped will stand out with different colors. To return back to the game, the player can use the "Escape" key.
 
-### End game
-
-If the player dies, the game will start again.
-
-![image](https://user-images.githubusercontent.com/30042943/178840701-35adb011-6bca-4081-8498-1b8e45bdfed4.png)
-
 ### Portals
 
 There are portals in the game that allow you to move between locations.
 
 ![image](https://user-images.githubusercontent.com/30042943/178841855-1531919b-43cd-49ee-a9ea-18f4449cd6d5.png)
+
+### End game
+
+If the player dies, the game will start again.
+
+![image](https://user-images.githubusercontent.com/30042943/178840701-35adb011-6bca-4081-8498-1b8e45bdfed4.png)
 
 ## Technical description
 
