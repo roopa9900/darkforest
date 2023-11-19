@@ -1,5 +1,10 @@
 # Dark Forest - Java Game
 
+Learn oops
+Learn Java
+learn Python
+Learn Go language
+
 ## Disclamore!
 
 This game was developed as a semester work at the university and is not a finished product. I had no previous experience in developing in java and especially games.
